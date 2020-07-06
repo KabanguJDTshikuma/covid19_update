@@ -3,8 +3,8 @@ import json
 import pyttsx3
 import speech_recognition as sr 
 import re
-api_key = "tgmPv_u_SvxQ"
-project_token = "tWzFYYXqwnRF"
+api_key = ""
+project_token = ""
 
 # response = requests.get(f'https://www.parsehub.com/api/v2/projects/{project_token}/last_ready_run/data', params={"api_key": api_key})
 # data = json.loads(response.text)
@@ -88,7 +88,7 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# speak("Bonjour Nordyn")
+speak("You don't know how to speak english or what, hum?")
 
 def get_audio():
     r = sr.Recognizer() 
@@ -121,7 +121,7 @@ def main():
     while  True:
         print('Listening...')
         text = get_audio()
-        # print(text)
+        print(text)
         for pattern, func in total_patterns.items():
             if pattern.match(text):
                 result = func()
